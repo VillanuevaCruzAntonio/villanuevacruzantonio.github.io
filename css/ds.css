@@ -1,0 +1,98 @@
+
+
+a{
+  text-decoration: none;
+  color: inherit;
+  font-size: 25px;
+}
+
+h3{
+  float: left;
+  padding-left: 30px;
+
+}
+
+img{
+  width: 180px;
+  height: 210px;
+  float: left;
+  padding: 10px;
+}
+
+table{
+  border-radius: 30px;
+  border-color: red;
+}
+
+td{
+  padding: 20px;
+}
+
+.separador{
+  background: transparent;
+  border-bottom: 2px solid black;
+  width: 98%;
+  margin: 15px;
+}
+
+.cabecera{
+  background: transparent;
+  margin: 0px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  background-color: gray;
+  padding-left: 20px;
+
+}
+
+.contenido{
+  padding: 20px;
+}
+
+/** Animate */
+
+.p1 {
+  animation-duration: 3s;
+  animation-name: slidein;
+}
+
+.p2 {
+  animation-duration: 4s;
+  animation-name: slidein;
+}
+
+.p3 {
+  animation-duration: 5s;
+  animation-name: slidein;
+}
+
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 300%;
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+
+
+.h11 {
+  animation-duration: 3s;
+  animation-name: slidein1;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+@keyframes slidein1 {
+  from {
+    margin-left: 40%;
+    width: 300%;
+  }
+
+  to {
+    margin-left: 50%;
+    width: 100%;
+  }
+}
