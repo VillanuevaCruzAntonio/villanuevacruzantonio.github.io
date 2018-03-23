@@ -18,3 +18,12 @@ function search() {
     $('#search-container').html('<pre>' + str + '</pre>');
   });
 }
+
+function searchByKeyword() {
+  var textoSearch = $('#query').val();
+  var results = YouTube.Search.list('id,snippet', {q: textoSearch, maxResults: 25});
+  for(var i in results.items) {
+    var item = results.items[i];
+    Logger.log('[%s] Title: %s', item.id.videoId, item.snippet.title);
+  }
+}
