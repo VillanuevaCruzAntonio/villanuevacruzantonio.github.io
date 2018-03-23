@@ -8,7 +8,7 @@ function handleAPILoaded() {
 // Busque una cadena especificada.
 function search() {
   var q = $('#query').val();
-  var request = gapi.client.youtube.search.list({
+  var request = gapi.client.YouTube.Search.list({
     q: q,
     part: 'snippet'
   });
