@@ -1,6 +1,6 @@
 // After the API loads, call a function to enable the search box.
 function handleAPILoaded() {
-  $('#search-button').attr('disabled', false);
+  $('#search-button').attr('enable', false);
 }
 
 // Search for a specified string.
