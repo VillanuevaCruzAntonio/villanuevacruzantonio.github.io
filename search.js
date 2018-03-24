@@ -4,13 +4,14 @@ $(function() {
     $("form").on("submit", function(e) {
        e.preventDefault();
        // prepare the request
+       var numResultado = $("#resultados").val();
        var request = gapi.client.youtube.search.list({
             part: "snippet",
             type: "video",
             q: encodeURIComponent($("#search").val()).replace(/%20/g, "+"),
-            maxResults: 3,
+            maxResults: numResultado,
             order: "viewCount",
-            publishedAfter: "2015-01-01T00:00:00Z"
+            //publishedAfter: "2015-01-01T00:00:00Z"
        }); 
        // execute the request
        request.execute(function(response) {
