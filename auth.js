@@ -1,24 +1,23 @@
-// The client ID is obtained from the Google Developers Console
-// at https://console.developers.google.com/.
-// If you run this code from a server other than http://localhost,
-// you need to register your own client ID.
+// El ID del cliente se obtiene de Google Developers Console
+// en https://console.developers.google.com/.
+// Si ejecuta este código desde un servidor que no sea http: // localhost,
+// debe registrar su propia identificación de cliente.
 var OAUTH2_CLIENT_ID = '377250606323-9gbq53s5daggomlbejq03ptuar7kcpls.apps.googleusercontent.com';
 var OAUTH2_SCOPES = [
   'https://www.googleapis.com/auth/youtube'
 ];
 
-// Upon loading, the Google APIs JS client automatically invokes this callback.
+// Al realizar la carga, el cliente JS de las API de Google invoca automáticamente esta devolución de llamada.
 googleApiClientReady = function() {
   gapi.auth.init(function() {
     window.setTimeout(checkAuth, 1);
   });
 }
 
-// Attempt the immediate OAuth 2.0 client flow as soon as the page loads.
-// If the currently logged-in Google Account has previously authorized
-// the client specified as the OAUTH2_CLIENT_ID, then the authorization
-// succeeds with no user intervention. Otherwise, it fails and the
-// user interface that prompts for authorization needs to display.
+// Intente el flujo inmediato del cliente de OAuth 2.0 tan pronto como se cargue la página.
+// Si la cuenta de Google actualmente iniciada ha autorizado previamente el cliente especificado como 
+// como OAUTH2_CLIENT_ID, la autorización se realiza sin intervención del usuario. De lo contrario, 
+// autorización debe mostrarse.
 function checkAuth() {
   gapi.auth.authorize({
     client_id: OAUTH2_CLIENT_ID,
@@ -27,7 +26,7 @@ function checkAuth() {
   }, handleAuthResult);
 }
 
-// Handle the result of a gapi.auth.authorize() call.
+//Manejar el resultado de una llamada gapi.auth.authorize ().
 function handleAuthResult(authResult) {
   if (authResult && !authResult.error) {
     // Authorization was successful. Hide authorization prompts and show
