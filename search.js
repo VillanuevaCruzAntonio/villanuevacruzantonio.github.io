@@ -7,7 +7,8 @@ function handleAPILoaded() {
 // Search for a specified string.
 // Busque una cadena especificada.
 function search() {
-  var q = $('#query').val();
+  // var q = $('#query').val();
+  var q = document.getElementById('query').value;
   var request = gapi.client.youtube.search.list({
     q: q,
     part: 'snippet'
