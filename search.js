@@ -21,7 +21,7 @@ function search() {
 }
 
 function searchByKeyword() {
-  var textoSearch = $('#query').val();
+  var textoSearch = document.getElementById('query').value;
   var results = youtube.search.list('id,snippet', {q: textoSearch, maxResults: 25});
   for(var i in results.items) {
     var item = results.items[i];
