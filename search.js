@@ -34,8 +34,11 @@ $(function() {
        e.preventDefault();
            // prepare the request
            var numResultado = $("#resultados").val();
-       if(numResultado == "" || numResultado > 50){
-            alert("El campo esta vacio Ingresa un número menor a 50");
+           var textoBuscar = $("#search").val();
+       if(numResultado == "" || numResultado > 50 || textoBuscar = ""){
+            alert("El campo de busqueda esta vacio  ingresa una cadena a buscar \n" +
+                  "Ó \n"+
+                  "El campo de numero de busqueda esta vacio Ingresa un número menor a 50");
        }else{
        
        var request = gapi.client.youtube.search.list({
