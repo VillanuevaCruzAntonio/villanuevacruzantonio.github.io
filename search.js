@@ -1,18 +1,10 @@
-// After the API loads, call a function to enable the search box.
-// Después de cargar la API, llame a una función para habilitar el cuadro de búsqueda.
 function handleAPILoaded() {
   $('#search-button').attr('disable', false);
 }
 
-// Search for a specified string.
-// Busque una cadena especificada.
 function busqueda() {
   var q = $('#query').val();
-  //var q = document.getElementById('query').value;
-  var request = gapi.client.youtube.search.list({
-    q: q,
-    part: 'snippet'
-  });
+  var request = gapi.client.youtube.search.list({q: q, part: 'snippet'});
 
   request.execute(function(response) {
     var str = JSON.stringify(response.result);
