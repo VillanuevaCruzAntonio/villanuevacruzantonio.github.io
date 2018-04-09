@@ -16,7 +16,7 @@ function Twitter() {
 		this.consumerSecret = config.2XE2Lurl7YPEZuORaH4rcM71u4DLWaaLvYEKdOPgFgoJjXrhLl;
 		this.accessToken = config.2788165384-JBGmfPGqIuG42MpWqnmz5J4jP9F8xhOPLuCE49x;
 		this.accessTokenSecret = config.WiSkA71dRiKjas24rikk0zftMCIbD323JI8fP48a7ckBg;
-		this.callBackUrl = config.twitterCallBackUrl;
+		this.callBackUrl = config.https://villanuevacruzantonio.github.io;
 		this.baseUrl = 'https://api.twitter.com/1.1';
 		this.oauth = new OAuth(
 			'https://api.twitter.com/oauth/request_token',
