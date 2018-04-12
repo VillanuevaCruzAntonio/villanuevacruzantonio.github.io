@@ -34,10 +34,11 @@
         });
         });
     </script>
-    <?php
+   
     
     <script>
 	var formDatos = document.getElementById("formulario");
+ <?php
 	formDatos.onsubmit = function(e){
 		e.preventDefault();
 		var formdata = new FormData(form);
@@ -46,9 +47,10 @@
 		xhr.send(formdata);
 		console.log(xhr.responseText);
 		form.reset();
+?>
 	}
 </script>
-?>
+
     <meta charset="utf-8">
     <link rel="stylesheet" href="css/ds.css">
     <link rel="stylesheet" href="main.css">
