@@ -6,34 +6,19 @@
     <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
     
     <script>
-        $(document).on('ready',function(){
-        $('#buttonSend').click(function(){
-            var url = "https://situroax.net/cube/pagos";                                      
-
-            $.ajax({                        
-            type: "POST",                 
-            url: url,                    
-            data: $("#formulario").serialize(),
-            success: function(data)            
-            {
-                $('#resultados').html(data);           
-            }
-            });
-        });
-        });
-    </script>
-    
-    <script>
-	var form = document.getElementById("formulario");
-	form.onsubmit = function(e){
-		e.preventDefault();
+	//var form = document.getElementById("formulario");
+	//form.onsubmit = function(e){
+		//e.preventDefault();
+	    function enviodatos(){
+		var form = document.getElementById("formulario");
 		var formdata = new FormData(form);
 		var xhr =  new XMLHttpRequest();
 		xhr.open("POST","https://situroax.net/cube/pagos/",false);
 		xhr.send(formdata);
 		console.log(xhr.responseText);
 		form.reset();
-	}
+	    }
+	//}
 </script>
 
     <meta charset="utf-8">
@@ -45,8 +30,8 @@
   <body>  
     
     <div>
-      <form action="" method="post" id="formulario">
-        <label for="">Identificador: </label>
+      <form action="" method="post" id="formulario" onsubmit="enviodatos()">
+        <label for="">Identificador: </label>onsubmit
         <input type="number" name="" id="" value="1024">
 
         <label for="">Nombre: </label>
