@@ -1,49 +1,68 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
-</head>
-<body>
+  <head>
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+    
+    <script>
+        $(document).on('ready',function(){
+        $('#buttonSend').click(function(){
+            var url = "https://situroax.net/cube/pagos";                                      
 
-  <label>Id:</label>
-  <input type="number" id="id" value= "1024">
-  <br>
-  <label>Nombre:</label>
-  <input type="text" id="nombre" value= "Villanueva Cruz Jesus Antonio">
-  <br>
-  <label>Num control:</label>
-  <input type="number" id="ncontrol" value= "12161435">
-  <br>
-  <label>Origen:</label>
-  <textarea rows="8" cols="80" id="origen" value="github"></textarea>
-  <br>
-  <button type="button" id="btn_enviar">Enviar</button>
-  <div class="respuesta">
-  </div>
-  <script>
-    document.getElementById('btn_enviar').addEventListener("click",function () {
-      var id=document.getElementById('id').value;
-      var nombre=document.getElementById('nombre').value;
-      var ncontrol=document.getElementById('ncontrol').value;
-      var origen=document.getElementById('origen').value;
+            $.ajax({                        
+            type: "POST",                 
+            url: url,                    
+            data: $("#formulario").serialize(),
+            success: function(data)            
+            {
+                $('#resultados').html(data);           
+            }
+            });
+        });
+        });
+    </script>
+    
+    <script>
+	var form = document.getElementById("formulario");
+	form.onsubmit = function(e){
+		e.preventDefault();
+		var formdata = new FormData(form);
+		var xhr =  new XMLHttpRequest();
+		xhr.open("POST","https://situroax.net/cube/pagos/",false);
+		xhr.send(formdata);
+		console.log(xhr.responseText);
+		form.reset();
+	}
+</script>
 
-      var xhttp = new XMLHttpRequest();
-      xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-          // console.log(this.responseText);
-          var p=document.createElement("p");
-          p.innerHTML=this.responseText;
-          document.getElementById('respuesta').appendChild(p);
-        }
-      };
-      var url="https://www.situroax.net/cube/pagos";
-      var postFields="".concat("id=",id,"&nombre=",nombre,"&noControl=",ncontrol,"&origen=",origen);
-      xhttp.open("POST", url, true);
-      xhttp.send(postFields);
-    });
-  </script>
-</body>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/ds.css">
+    <link rel="stylesheet" href="main.css">
+    <title>Mashup de google</title>
+  </head>
+  
+  <body>  
+    
+    <div>
+      <form action="" method="post" id="formulario">
+        <label for="">Identificador: </label>
+        <input type="number" name="" id="" value="1024">
+
+        <label for="">Nombre: </label>
+        <input type="text" name="nombre" id="" value="Jesus Antonio Villanueva Cruz">
+
+        <label for="">Número de control: </label>
+        <input type="text" name="numControl" id="" value="12161435">
+
+        <label for="">Origen: </label>
+        <input type="text" name="textOrigen" id="" value="prueba de origen">
+
+        <input type="submit" value="enviar" id="buttonSend">
+    </form>
+
+    <div id="resultados"></div>
+    </div>
+    
+  </body>
 </html>
