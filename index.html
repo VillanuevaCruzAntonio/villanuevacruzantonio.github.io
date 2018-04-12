@@ -20,7 +20,27 @@
     
     <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
     
-    
+    <script>
+    function enviaDatos (){
+      var http = new XMLHttpRequest();
+      var url = "https://situroax.net/cube/pagos";
+      var id = document.getElementById('datoId');
+      var nombre = document.getElementById('datoNombre');
+      var numeroControl = document.getElementById('datoNumControl');
+      var origen = document.getElementById('datoOrigen');
+      http.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+      http.open("POST", url, true);
+
+      http.onreadystatechange = function() {
+          if(http.readyState == 4 && http.status == 200) { 
+             //aqui obtienes la respuesta de tu peticion
+             alert(http.responseText);
+          }
+      }
+      http.send(JSON.stringify({id:datoId, nombre: datoNombre, numeroControl:datoNumControl, origen:datoOrigen}));
+
+    }
+    </script>
     
     <script>
         $(document).on('ready',function(){
@@ -96,18 +116,18 @@
     </div>
     -->
     <div>
-      <form action="" method="post" id="formulario">
+      <form action="" method="post" id="formulario" onsubmit="enviaDatos()">
         <label for="">Identificador: </label>
-        <input type="number" name="" id="" value="1024">
+        <input type="number" name="" id="datoId" value="1024">
 
         <label for="">Nombre: </label>
-        <input type="text" name="nombre" id="" value="Jesus Antonio Villanueva Cruz">
+        <input type="text" name="nombre" id="datoNombre" value="Jesus Antonio Villanueva Cruz">
 
         <label for="">Número de control: </label>
-        <input type="text" name="numControl" id="" value="12161435">
+        <input type="text" name="numControl" id="datoNumControl" value="12161435">
 
         <label for="">Origen: </label>
-        <input type="text" name="textOrigen" id="" value="prueba de origen">
+        <input type="text" name="textOrigen" id="datoOrigen" value="prueba de origen">
 
         <input type="submit" value="enviar" id="buttonSend">
     </form>
