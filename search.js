@@ -45,7 +45,4 @@ function init() {
         // yt api is ready
     });
 }
-
-<?php
 echo "Hola mundo";
-?>
