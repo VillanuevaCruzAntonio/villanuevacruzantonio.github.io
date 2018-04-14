@@ -45,4 +45,3 @@ function init() {
         // yt api is ready
     });
 }
-echo "Hola mundo";
