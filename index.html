@@ -129,13 +129,16 @@
     </style>
   </head>
   <body>
-    <div id="map" width="800" height="600" frameborder="0" style="border:0" allowfullscreen></div>
+  <!--   <div id="map" width="800" height="600" frameborder="0" style="border:0" allowfullscreen></div> -->
+ <iframe id = "map" width="800" height="600" frameborder="0" style="border:0" allowfullscreen>
+                </iframe>
+	  
     <script>
       var map;
       function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
           center: {lat: -34.397, lng: 150.644},
-          zoom: 8
+          zoom: 5
         });
       }
     </script>
