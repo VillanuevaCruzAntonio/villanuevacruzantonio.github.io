@@ -108,75 +108,29 @@
   </body>
 </html>
 -->
-
 <!DOCTYPE html>
 <html>
-    <head>
-     <!-- scripts -->
-        <script>
-            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-            })
-            (window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-            ga('create', 'UA-115359195-1', 'auto');
-            ga('send', 'pageview');
-        </script>
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-        <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
-        <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
-        <script src="funciones/search.js"></script>
-         <!-- <script src="funciones/maps.js"></script> -->
-        <script src="https://apis.google.com/js/client.js?onload=init"></script>
-        <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBqANib7cK7e_yYDYJq3OcBsD9OGwks5Ko&callback=initMap"
-        async defer></script> -->
-
-        <meta charset="utf-8">
-        <link rel="stylesheet" href="disenio/ds.css">
-        <link rel="stylesheet" href="disenio/main.css">
-        <title>Mashup de google</title>
-    </head>
-  
-    <body>  
-        <div class="cabecera">
-            <h1 class="h11">Mashup</h1>
-        </div>
-
-        <div class="separador"> </div>
-
-        <div class="row">
-            <div class="col-md-6 col-md-offset-3">
-                <form action="#" onsubmit="getJsonTweets()">
-                    <center>
-                        <p>
-                            <label>Busqueda: </label>
-                            <input type="text" id="search" placeholder="Video a buscar" autocomplete="off" />
-                        </p>
-                  
-                        <p>
-                            <label>Resultados: </label>
-                            <input type="number" id="resultados" placeholder="Número de Videos" autocomplete="off" />
-                        </p>
-                    
-                        <p>
-                            <input type="submit" value="Search" class="form-control btn btn-primary w100">
-                        </p>
-                    </center>
-                </form>
-            </div>
-            
-            <div id="results" >
-                <h4>Youtube</h4>
-            </div>
-        </div> 
-    
-        <div>
-            <h4>Google Maps</h4>
-            <div id="map">
-              
-            </div>
-            <script>
+  <head>
+    <title>Simple Map</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <script>
       var map;
       function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
@@ -185,17 +139,7 @@
         });
       }
     </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBqANib7cK7e_yYDYJq3OcBsD9OGwks5Ko&callback=initMap"
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"
     async defer></script>
-            
-        </div>
-        
-        <div>
-            <h1>espacio</h1>
-            <h1>espacio</h1>
-            <h1>espacio</h1>
-            <h1>espacio</h1>
-            <h1>espacio</h1>
-        </div>
-    </body>
+  </body>
 </html>
