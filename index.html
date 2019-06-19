@@ -76,54 +76,12 @@
                 <div class="col col-sm-6 col-md-6 col-lg-6 col-xl-6">
                     <div class="container">
 
-                        <div class="row h-25" >
-                            <div class="col-4 col-sm-4 col-md-4 col-lg-4 ">
-                                <div id="divInputLoad">
-                                    <h4>
-                                        Imagen a subir
-                                    </h4>
-
-                                    <div id="file-preview-zone">
-                                    </div>
-
-                                    <div id="divFileUpload"> 
-                                        <input id="file-upload" onchange="readFile" type="file" accept="image/*" />
-                                    </div>
-                                </div>
-
-                                    <script>
-                                        var fileUpload = document.getElementById('file-upload');
-                                        fileUpload.onchange = function (e) {
-                                            readFile(e.srcElement);
-                                        }
-                                    </script>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div>
-                            <p></p>
-                        </div>  
-
-                        <div class="row h-50" >               
-                            <div class="col-4 col-sm-4 col-md-4 col-lg-4"> 
-                                <textarea name="comentarios" id="comentarios" cols="30" rows="10"></textarea>
-                            </div>
-                        </div>
-
-                        <div>
-                            <p></p>
-                        </div>
-
                         <div "row h-100">
                             <div "col-4 col-sm-4 col-md-4 col-lg-4">
                                 <button onclick="publicarPost()">
                                     <h6>Publicar</h6>
                                 </button>
                             </div>
-                        </div>
-
-                        <div id="confirmMsg">
                         </div>
                         
                     </div>
