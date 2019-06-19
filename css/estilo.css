@@ -6,3 +6,7 @@ img{
 body{
     background-image: url("../ima/103.jpg");
 }
+
+.align-items-center{
+    color: #FF0000;
+}
